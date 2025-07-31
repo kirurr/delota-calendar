@@ -32,7 +32,7 @@ export function Calendar({
       days.map((d) => d.date),
     ]),
   );
-  const modifiersStyles: { [k: string]: any } = Object.fromEntries(
+  const modifiersStyles: { [k: string]: { backgroundColor?: string; color?: string; fontWeight?: string } } = Object.fromEntries(
     Array.from(daysTypes.entries()).map(([key, days]) => [
       key.toString(),
       {
@@ -41,7 +41,6 @@ export function Calendar({
       },
     ]),
   );
-  //@ts-ignore
   modifiersStyles.today = {
     fontWeight: "bold",
   };
@@ -67,7 +66,7 @@ export function Calendar({
         }}
         styles={{
           root: {
-            //@ts-ignore
+						//@ts-expect-error no stuff
             "--rdp-accent-color": `hsl(${today.day.bgH},${today.day.bgS}%,${today.day.bgL - 30}%)`,
             "--rdp-outside-opacity": 0.3,
           },
