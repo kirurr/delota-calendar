@@ -1,5 +1,7 @@
 "use client";
 
+import { subscribeToPush } from "@/firebase";
+
 export default function Firebase() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
@@ -12,5 +14,13 @@ export default function Firebase() {
       });
   }
 
-  return <div>Firebase</div>;
+  return (
+    <button
+      onClick={async () => {
+        const token = await subscribeToPush();
+      }}
+    >
+      Firebase
+    </button>
+  );
 }
