@@ -1,6 +1,7 @@
 "use server";
 
 import webpush from 'web-push'
+import type { PushSubscription } from 'web-push'
 import { add } from "date-fns";
 import { cookies } from "next/headers";
 
