@@ -31,7 +31,7 @@ function PushNotificationManager() {
   }, []);
 
   async function registerServiceWorker() {
-    const registration = await navigator.serviceWorker.register("/firebase-messaging-sw.js", {
+    const registration = await navigator.serviceWorker.register("/sw.js", {
       scope: "/",
       updateViaCache: "none",
     });
