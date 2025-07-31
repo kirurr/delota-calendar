@@ -1,6 +1,8 @@
 self.addEventListener('push', function (event) {
+	console.log('[Service Worker] Push received'); // 👈 добавь
   if (event.data) {
     const data = event.data.json()
+		console.log('[Service Worker] Push data:', data); // 👈 добавь
     const options = {
       body: data.body,
       icon: data.icon || '/icon.jpg',
@@ -13,6 +15,9 @@ self.addEventListener('push', function (event) {
     }
     event.waitUntil(self.registration.showNotification(data.title, options))
   }
+	else {
+		console.warn('[Service Worker] Push event has no data');
+	}
 })
  
 self.addEventListener('notificationclick', function (event) {
