@@ -14,6 +14,7 @@ const messaging = firebase.messaging();
 messaging.onBackgroundMessage(payload => {
   console.log('[firebase-messaging-sw.js] Получено сообщение:', payload);
   const { title, body } = payload.notification;
+	console.log(payload)
   self.registration.showNotification(title, {
     body,
     icon: '/icon.jpg', // твой иконка
