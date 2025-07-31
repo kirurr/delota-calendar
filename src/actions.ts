@@ -50,6 +50,7 @@ export async function sendNotification(message: string) {
   }
  
   try {
+		await new Promise((res) => setTimeout(res, 5000));
     await webpush.sendNotification(
       subscription,
       JSON.stringify({
