@@ -127,7 +127,7 @@ function InstallPrompt() {
   );
 }
 
-export function Push() {
+export default function Push() {
   return (
     <div>
       <PushNotificationManager />

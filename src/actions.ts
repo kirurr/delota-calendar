@@ -23,7 +23,7 @@ export async function setStartDateAction(date: Date): Promise<ActionResult> {
 
  
 webpush.setVapidDetails(
-  '<mailto:your-email@example.com>',
+  'https://delota-calendar.vercel.app',
   process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY!,
   process.env.VAPID_PRIVATE_KEY!
 )

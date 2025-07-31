@@ -1,5 +1,5 @@
 import Day from "@/components/day";
-import { Push } from "@/components/push";
+import Push from "@/components/push";
 import { cookies } from "next/headers";
 
 export default async function Home() {
